@@ -16,8 +16,8 @@ public class locationAPIs {
         var createResponse = given().queryParam("key", "qaclick123").body(payload.addLocationBody()).
                 when().post(endpoint).
                 then().log().body().assertThat().statusCode(200).extract().response().asString();
-
-        placeId = convertToJsonObj.placeId(createResponse);
+        JsonPath js = convertToJsonObj.obj(createResponse);
+        placeId = js.getString("place_id");
 
     }
     @Test(priority = 3)
@@ -27,8 +27,8 @@ public class locationAPIs {
                 when().get(endpoint).
                 then().assertThat().statusCode(200).extract().response().asString();
         System.out.println(readResponse);
-
-        String actualAddress = convertToJsonObj.address(readResponse);
+        JsonPath js = convertToJsonObj.obj(readResponse);
+        String actualAddress = js.getString("address");
         Assert.assertEquals(actualAddress, newAddress);
 
     }
