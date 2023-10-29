@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import static io.restassured.RestAssured.given;
 public class serializeLocation {
-    static RequestSpecification req = new RequestSpecBuilder().addQueryParam("key", "qaclick123").build();
+    static RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").addQueryParam("key", "qaclick123").build();
     static ResponseSpecification res = new ResponseSpecBuilder().expectStatusCode(200).build();
     @Test
     public void buildLocationPayload(){
@@ -35,9 +35,8 @@ public class serializeLocation {
         list.add("Park");
         gl.setTypes(list);
 
-        String endpoint = "https://rahulshettyacademy.com/maps/api/place/add/json";
         var createResponse = given().spec(req).body(gl).
-                when().post(endpoint).
+                when().post("/maps/api/place/add/json").
                 then().spec(res).extract().response().asString();
         System.out.println(createResponse);
 
