@@ -1,0 +1,69 @@
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=text/plain; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{"location":{"lat":-38.383494,"lng":33.427362},"accuracy":50,"name":"World Trade Centre","phone_number":"+91976927","address":"3T, Floor 5","types":["Shoe Shop","Park"],"website":"www.google.com","language":"Hindi"}
+HTTP/1.1 200 OK
+Date: Mon, 30 Oct 2023 15:07:42 GMT
+Server: Apache/2.4.52 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK",
+    "place_id": "9594c3f4a4df3093648340b0c5643df2",
+    "scope": "APP",
+    "reference": "8e4ee59fb32c3713aab569d9453ec9d08e4ee59fb32c3713aab569d9453ec9d0",
+    "id": "8e4ee59fb32c3713aab569d9453ec9d0"
+}
+Request method:	GET
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=9594c3f4a4df3093648340b0c5643df2
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+				place_id=9594c3f4a4df3093648340b0c5643df2
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Mon, 30 Oct 2023 15:07:43 GMT
+Server: Apache/2.4.52 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 228
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "location": {
+        "latitude": "-38.383494",
+        "longitude": "33.427362"
+    },
+    "accuracy": "50",
+    "name": "World Trade Centre",
+    "phone_number": "+91976927",
+    "address": "3T, Floor 5",
+    "types": "Shoe Shop,Park",
+    "website": "www.google.com",
+    "language": "Hindi"
+}
